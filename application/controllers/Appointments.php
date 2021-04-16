@@ -97,6 +97,7 @@ class Appointments extends EA_Controller {
             $display_any_provider = $this->settings_model->get_setting('display_any_provider');
             $aways_edit_customer = $this->settings_model->get_setting('aways_edit_customer');
             $timezones = $this->timezones->to_array();
+            $company_link = $this->settings_model->get_setting('company_link');
 
             // Remove the data that are not needed inside the $available_providers array.
             $available_providers = array_map(function($provider) {
@@ -124,7 +125,9 @@ class Appointments extends EA_Controller {
                     $variables = [
                         'message_title' => lang('appointment_not_found'),
                         'message_text' => lang('appointment_does_not_exist_in_db'),
-                        'message_icon' => base_url('assets/img/error.png')
+                        'message_icon' => base_url('assets/img/error.png'),
+                        'company_name' => $company_name,
+                        'company_link' => $company_link
                     ];
 
                     $this->load->view('appointments/message', $variables);
@@ -147,7 +150,9 @@ class Appointments extends EA_Controller {
                         'message_text' => strtr(lang('appointment_locked_message'), [
                             '{$limit}' => sprintf('%02d:%02d', $hours, $minutes)
                         ]),
-                        'message_icon' => base_url('assets/img/error.png')
+                        'message_icon' => base_url('assets/img/error.png'),
+                        'company_name' => $company_name,
+                        'company_link' => $company_link
                     ];
                     $this->load->view('appointments/message', $view);
                     return;
@@ -184,6 +189,7 @@ class Appointments extends EA_Controller {
                 'available_services' => $available_services,
                 'available_providers' => $available_providers,
                 'company_name' => $company_name,
+                'company_link' => $company_link,
                 'manage_mode' => $manage_mode,
                 'customer_token' => $customer_token,
                 'date_format' => $date_format,
@@ -273,7 +279,9 @@ class Appointments extends EA_Controller {
         $view = [
             'message_title' => lang('appointment_cancelled_title'),
             'message_text' => lang('appointment_cancelled'),
-            'message_icon' => base_url('assets/img/success.png')
+            'message_icon' => base_url('assets/img/success.png'),
+            'company_name' => $this->settings_model->get_setting('company_name'),
+            'company_link' => $this->settings_model->get_setting('company_link')
         ];
 
         if (isset($exceptions))
@@ -333,6 +341,7 @@ class Appointments extends EA_Controller {
             ],
             'service_data' => $service,
             'company_name' => $company_name,
+            'company_link' => $this->settings_model->get_setting('company_link')
         ];
 
         if ($exceptions)
