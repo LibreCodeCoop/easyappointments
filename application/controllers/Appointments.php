@@ -96,6 +96,7 @@ class Appointments extends EA_Controller {
             $display_privacy_policy = $this->settings_model->get_setting('display_privacy_policy');
             $privacy_policy_content = $this->settings_model->get_setting('privacy_policy_content');
             $display_any_provider = $this->settings_model->get_setting('display_any_provider');
+            $login_on_footer = $this->settings_model->get_setting('login_on_footer');
             $aways_edit_customer = $this->settings_model->get_setting('aways_edit_customer');
             $timezones = $this->timezones->to_array();
             $company_link = $this->settings_model->get_setting('company_link');
@@ -206,6 +207,7 @@ class Appointments extends EA_Controller {
                 'display_privacy_policy' => $display_privacy_policy,
                 'privacy_policy_content' => $privacy_policy_content,
                 'timezones' => $timezones,
+                'login_on_footer' => $login_on_footer,
                 'display_any_provider' => $display_any_provider
             ];
             foreach ($variables['show_step'] as $step_number => $show_step) {

@@ -108,8 +108,8 @@
         });
 
         settings.push({
-            name: 'custom_code_block',
-            value: $('#custom-script').val()
+            name: 'login_on_footer',
+            value: $('#disable-login-on-footer').prop('checked') ? '1' : '0'
         });
 
 
