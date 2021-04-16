@@ -167,6 +167,12 @@
                                 <input id="replace-home" data-field="replace_home" class="form-control">
                                 <span class="help-block">
                                     <?= lang('replace_home_hint') ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="custom-script"><?= lang('custom_code_block') ?></label>
+                                <textarea id="custom-script" cols="30" rows="3" class="form-control"></textarea>
+                                <span class="help-block">
+                                    <?= lang('custom_code_block_hint') ?>
                                 </span>
                             </div>
 
