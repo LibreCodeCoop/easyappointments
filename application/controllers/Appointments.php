@@ -60,6 +60,8 @@ class Appointments extends EA_Controller {
             return;
         }
         try {
+            $company_name = $this->settings_model->get_setting('company_name');
+            $company_link = $this->settings_model->get_setting('company_link');
             $available_services = $this->getServices($serviceSlug, $this->input->get('service'));
             $available_providers = $this->getProviders($providerSlug, $this->input->get('provider'));
             $customer = $this->getCustomerByHash($customerHash);
@@ -75,7 +77,9 @@ class Appointments extends EA_Controller {
             $variables = [
                 'message_title' => lang('page_not_found'),
                 'message_text' => lang('page_not_found_message'),
-                'message_icon' => base_url('assets/img/error.png')
+                'message_icon' => base_url('assets/img/error.png'),
+                'company_name' => $company_name,
+                'company_link' => $company_link
             ];
             $this->load->view('appointments/message', $variables);
             return;
@@ -83,7 +87,6 @@ class Appointments extends EA_Controller {
 
         try
         {
-            $company_name = $this->settings_model->get_setting('company_name');
             $book_advance_timeout = $this->settings_model->get_setting('book_advance_timeout');
             $date_format = $this->settings_model->get_setting('date_format');
             $time_format = $this->settings_model->get_setting('time_format');
@@ -99,7 +102,6 @@ class Appointments extends EA_Controller {
             $login_on_footer = $this->settings_model->get_setting('login_on_footer');
             $aways_edit_customer = $this->settings_model->get_setting('aways_edit_customer');
             $timezones = $this->timezones->to_array();
-            $company_link = $this->settings_model->get_setting('company_link');
 
             // Remove the data that are not needed inside the $available_providers array.
             $available_providers = array_map(function($provider) {
