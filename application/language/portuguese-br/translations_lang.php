@@ -276,9 +276,15 @@ $lang['captcha_is_wrong'] = 'Verificação do CAPTCHA falhou, favor tente novame
 $lang['any_provider'] = 'Qualquer atendente';
 $lang['login_on_footer'] = 'Login no rodapé';
 $lang['requested_hour_is_unavailable'] = 'Infelizmente, o agendamento solicitado não está disponível. Por favor selecione um horário diferente para o seu agendamento.';
+<<<<<<< HEAD
 $lang['aways_edit_customer'] = 'Sempre editar informações do cliente';
 $lang['aways_edit_customer_hint'] = 'Sempre editar dados do cliente quando um hash de cliente for passado pela URL';
 $lang['customer_notifications'] = 'Notificações de clientes';
+=======
+$lang['aways_edit_customer'] = 'Always edit customer data';
+$lang['aways_edit_customer_hint'] = 'Always edit customer data even customer identification is passed in the URL';
+$lang['customer_notifications'] = 'Notificações de Clientes';
+>>>>>>> add-slug
 $lang['customer_notifications_hint'] = 'Define se o cliente receberá ou não, notificações por email sempre que um de seus agendamentos sejam alterados de horário.';
 $lang['date_format'] = 'Formato da data';
 $lang['date_format_hint'] = 'Altera o formato de visualização da Data (D - Data, M - Mes, Y - Ano).';
