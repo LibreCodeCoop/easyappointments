@@ -68,7 +68,7 @@ class Appointments extends EA_Controller {
 
             $replace_home = $this->settings_model->get_setting('replace_home');
             if ($replace_home && filter_var($replace_home, FILTER_VALIDATE_URL) !== false) {
-                if (!$appointment_hash && !$available_services && !$available_providers) {
+                if (!$appointment_hash && !$serviceSlug && !$providerSlug) {
                     redirect($replace_home);
                     return;
                 }
@@ -345,6 +345,7 @@ class Appointments extends EA_Controller {
                 'timezone' => $customer['timezone'],
             ],
             'service_data' => $service,
+            'replace_home' => $this->settings_model->get_setting('replace_home'),
             'company_name' => $company_name,
             'company_link' => $this->settings_model->get_setting('company_link')
         ];
