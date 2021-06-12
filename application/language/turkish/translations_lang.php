@@ -48,6 +48,7 @@ $lang['customer'] = 'Müşteri';
 $lang['start'] = 'Başlangıç';
 $lang['end'] = 'Bitiş';
 $lang['name'] = 'Ad';
+$lang['slug'] = 'Slug';
 $lang['appointment_link_title'] = 'Randevunun Bağlantısı';
 $lang['success'] = 'Başarılı.';
 $lang['appointment_added_to_google_calendar'] = 'Randevunuz Google Takvim hesabınıza eklendi.';
@@ -281,7 +282,11 @@ $lang['any_provider'] = 'Any Provider';
 $lang['login_on_footer'] = 'Login on footer';
 $lang['requested_hour_is_unavailable'] = 'The requested appointment is unfortunately not available. Please select a different hour for your appointment.';
 $lang['aways_edit_customer'] = 'Always edit customer data';
+<<<<<<< HEAD
+$lang['aways_edit_customer_hint'] = 'Always edit customer data even if a customer hash is passed in the URL';
+=======
 $lang['aways_edit_customer_hint'] = 'Always edit customer data even customer identification is passed in the URL';
+>>>>>>> 65197ae78a48a1e823a5e3b728d58a4b61e63a9e
 $lang['customer_notifications'] = 'Customer Notifications';
 $lang['customer_notifications_hint'] = 'Defines whether the customer will receive email notifications whenever there is a schedule change on one of his appointments.';
 $lang['date_format'] = 'Date Format';

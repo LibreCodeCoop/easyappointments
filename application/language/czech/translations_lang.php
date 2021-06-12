@@ -46,6 +46,7 @@ $lang['customer'] = 'Zákazník';
 $lang['start'] = 'Začátek';
 $lang['end'] = 'Konec';
 $lang['name'] = 'Název';
+$lang['slug'] = 'Slug';
 $lang['phone'] = 'Telefon';
 $lang['address'] = 'Adresa';
 $lang['appointment_link_title'] = 'Odkaz na schůzku';
