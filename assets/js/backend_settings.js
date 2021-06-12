@@ -225,7 +225,7 @@ window.BackendSettings = window.BackendSettings || {};
          * Change the state of the Visible/Hidden button
          */
         $('.hide-toggle').on('click', function () {
-            let $input = $(this);
+            var $input = $(this);
             $input.find("div").toggleClass("hidden");
         });
 
@@ -250,7 +250,7 @@ window.BackendSettings = window.BackendSettings || {};
          * @return the state of the button. True for visible, false for hidden.
          */
         function getShowToggleValue($element){
-            let visiblePartArray = $element.find(".hide-toggle-visible");
+            var visiblePartArray = $element.find(".hide-toggle-visible");
             return !visiblePartArray.hasClass("hidden");
         }
 
