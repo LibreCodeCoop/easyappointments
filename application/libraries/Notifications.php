@@ -207,7 +207,7 @@ class Notifications {
 
             foreach ($admins as $admin)
             {
-                if ( ! $admin['settings']['notifications'] === '0')
+                if ($admin['settings']['notifications'] === '0')
                 {
                     continue;
                 }
