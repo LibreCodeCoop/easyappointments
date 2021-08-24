@@ -1633,6 +1633,8 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
             $dialog.find('#customer-notes').val(customer.notes);
 
             $dialog.modal('show');
+
+            $('#calendar').fullCalendar('gotoDate', moment(appointment.start_datetime));
         }
 
         if (!$('#select-filter-item option').length) {
